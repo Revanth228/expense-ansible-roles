@@ -1,5 +1,5 @@
 - name: configuring db from ansible-roles
   hosts: db
   become: yes
-  tasks:
+  roles:
   - db
