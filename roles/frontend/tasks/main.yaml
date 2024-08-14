@@ -10,7 +10,7 @@
     enabled: yes
 
 - name: create app-pre-requeset 
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
    name: common
    tasks_from: main.yaml
 
