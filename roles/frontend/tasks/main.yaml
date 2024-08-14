@@ -9,22 +9,28 @@
     state: started
     enabled: yes
 
-- name: remove the index files
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
+- name: create app-pre-requeset 
+  ansible.builtin.import_roles:
+   name: common
+   tasks_from: main.yaml
 
 
-- name: creating the directories
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: directory
+# - name: remove the index files
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: absent
 
-- name: download and copy the code
-  ansible.builtin.unarchive:
-    src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-    dest: /usr/share/nginx/html
-    remote_src: yes
+
+# - name: creating the directories
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: directory
+
+# - name: download and copy the code
+#   ansible.builtin.unarchive:
+#     src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+#     dest: /usr/share/nginx/html
+#     remote_src: yes
 
 - name: copy backend cofig
   ansible.builtin.template:
