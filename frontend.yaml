@@ -1,4 +1,4 @@
-- name: configuring frontend from ansible-roles
+- name: configuring db from ansible-roles
   hosts: frontend
   become: yes
   roles:
