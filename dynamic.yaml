@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-  - ansible.builtin.dnf:
+  - name: install postfix
+    ansible.builtin.dnf:
       name: postfix
       state: latest
-      
