@@ -6,7 +6,7 @@
    record:
   tasks:
   - name: create ec2 instances
-    amazon.aws.aws_ec2:
+    amazon.aws.ec2_instance:
      instance_type: t2.micro
      name: "{{item}}"
      security_group: Alltraffic-allow 
