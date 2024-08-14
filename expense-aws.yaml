@@ -1,5 +1,5 @@
 - name: creating 3 ec2 instances and r53
-  hosts: local host
+  hosts: localhost
   
   vars:
    zone: daws78s-rev.online
