@@ -1,6 +1,6 @@
 - name: creating 3 ec2 instances and r53
   hosts: local host
-  become: yes
+  
   vars:
    zone: daws78s-rev.online
    record:
@@ -8,11 +8,11 @@
   - name: create ec2 instances
     amazon.aws.ec2_instance:
      instance_type: t2.micro
-     name: "{{item}}"
+     name: "{{ item }}"
      security_group: Alltraffic-allow 
      image_id: ami-041e2ea9402c46c32
      tags:
-      Name: "{{ Name }}"
+      Name: "{{ item }}"
 
     loop:
      - db
